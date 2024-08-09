@@ -1,4 +1,8 @@
+using WebAPI;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection(nameof(AppSettings)));
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

@@ -1,42 +1,81 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
+}
+
+.animation-container {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	height: 75px;
+	width: 75px;
+	display: flex;
+	justify-content: center;
+}
+
+.animation-container-text {
+	position: absolute;
+	bottom: -20px;
+}
+
+.logo-container {
+	position: absolute;
+	animation: translate 2s infinite linear;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+	will-change: filter;
+	transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+	filter: drop-shadow(0 0 2em #fffa66aa);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+	filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes upDown {
+	25% {
+		transform: translatey(5px);
+	}
+	50% {
+		transform: translatey(0px);
+	}
+	75% {
+		transform: translatey(-5px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+@keyframes translate {
+	25% {
+		transform: translatex(10px);
+	}
+	50% {
+		transform: translatex(0px);
+	}
+	75% {
+		transform: translatex(-10px);
+	}
+	100% {
+		transform: translatex(0px);
+	}
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+	a .logo {
+		animation: upDown 1s infinite linear;
+	}
 }
 
 .card {
-  padding: 2em;
+	padding: 2em;
 }
 
 .read-the-docs {
-  color: #888;
+	color: #888;
 }
